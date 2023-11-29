@@ -1,17 +1,22 @@
-<nav class="grid grid-cols-3 p-8 max-sm:flex max-sm:flex-col max-sm:space-y-6">
+<nav class="grid grid-cols-3 p-8 max-sm:flex max-sm:flex-col max-sm:space-y-6 border-b-2 border-black animate-fade-in">
   <div class="flex justify-center items-center text-center">
-    <h1 class="text-3xl font-normal">Fantasty</h1>
+    <a href=""><h1 class="text-3xl font-normal">Fantasty</h1></a>
   </div>
   <div class="flex justify-center items-center text-center">
     <ul class="flex justify-center items-center text-center space-x-8 text-xl">
       <a href="" class="hover:underline">Home</a>
-      <a href="/recipes" class="hover:underline">Menu</a>
+      <a href="/recipes" class="hover:underline">Recipes</a>
       <a href="/about" class="hover:underline">About</a>
     </ul>
   </div>
-  <div class="flex justify-center items-center text-center space-x-4 max-sm:hidden">
-    <a href="/signup"><app-button title="Sign Up"></app-button></a>
-    <a href="/signin">Sign In</a>
+  <div class="flex justify-center items-center text-center space-x-8 max-sm:hidden">
+    <form>
+      <div class="flex space-x-1 max-xl:hidden">
+          <input type="text" class="py-4 px-8 rounded-3xl border-[1px] border-black" placeholder="Find Recipes">
+            <img src="assets/search.svg" alt="search" class="w-[20px] cursor-pointer">
+      </div>
+  </form>
+    <a href="/auth"><app-button title="ACCOUNT" class=""></app-button></a>
   </div>
 </nav>
 

@@ -2,16 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
-import { SigninComponent } from './pages/auth/signin/signin.component';
-import { SignupComponent } from './pages/auth/signup/signup.component';
-import { MenuComponent } from './pages/menu/menu.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { RecipesComponent } from './pages/recipes/recipes.component';
 
 const routes: Routes = [
   { path: "", component: IndexComponent },
-  { path: "", component: MenuComponent },
+  { path: "recipes", component: RecipesComponent },
   { path: "about", component: AboutComponent },
-  { path: "signin", component: SigninComponent },
-  { path: "signup", component: SignupComponent }
+  { path: "auth", component: AuthComponent }
 ];
 
 @NgModule({

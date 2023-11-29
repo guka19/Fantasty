@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
-import { SignupComponent } from './pages/auth/signup/signup.component';
-import { SigninComponent } from './pages/auth/signin/signin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
-import { MenuComponent } from './pages/menu/menu.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { RecipesComponent } from './pages/recipes/recipes.component';
+import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +22,17 @@ import { MenuComponent } from './pages/menu/menu.component';
     NavbarComponent,
     IndexComponent,
     AboutComponent,
-    SignupComponent,
-    SigninComponent,
     FooterComponent,
     ButtonComponent,
-    MenuComponent,
+    AuthComponent,
+    RecipesComponent,
+    RecipeCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

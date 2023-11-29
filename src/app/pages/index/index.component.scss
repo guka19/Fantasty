@@ -1,25 +1,15 @@
-.img-container {
-    width: 60%;
-    height: 90%;
-    background-image: url(../../../assets/indeximg1.png);
-    background-size: cover;
-    border-radius: 60px;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.dish-item1 {
-    background-image: url(../../../assets/tomato-chesse.png);
-    background-size: cover;
-    background-position: center;
-}
-
-.dish-item2 {
-    background-image: url(../../../assets/pizza.jpeg);
-    background-size: cover;
-    background-position: center;
-}
-
-.dish-item3 {
-    background-image: url(../../../assets/steak.jpeg);
-    background-size: cover;
-    background-position: center;
+.animate-fade-in > * {
+    animation: fade-in 0.8s ease-in-out forwards;
+    opacity: 0;
 }
