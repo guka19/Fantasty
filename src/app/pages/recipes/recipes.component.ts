@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterRecipe } from 'src/app/shared/models/filterRecipes';
 import { Recipe } from 'src/app/shared/models/result';
-
-import { FormBuilder } from '@angular/forms';
+import { FilterRecipesService } from 'src/app/shared/services/filter-recipes.service';
 
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 
@@ -11,10 +11,6 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit {
-
-  recipeForm = this.fb.group({
-    recipeName: [""]
-  })
 
   recipes: Recipe[] = [];
   isDataLoading: boolean = false;
@@ -37,9 +33,19 @@ export class RecipesComponent implements OnInit {
     })
   }
 
+
+  filterRecipes($event: string) {
+    let filterName = $event;
+    let filter: FilterRecipe = {
+      recipeName: filterName
+    }
+    
+    this.recipes = this.filterService.filterRecipes(filter);
+  }
+
   ngOnInit(): void {
     this.loadRecipes();
   }
 
-  constructor(private recipeService: RecipeService, private fb: FormBuilder) {}
+  constructor(private recipeService: RecipeService, private filterService: FilterRecipesService) {}
 }

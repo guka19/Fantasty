@@ -1,4 +1,11 @@
 <div class="flex flex-col justify-center items-center text-center py-8 animate-fade-in">
+    <div class="flex flex-col p-4 space-y-4">
+        <h1 class="text-3xl">Search Recipes</h1>
+        <div class="flex space-x-2">
+            <input type="text" #recipeName placeholder="Recipe Name">
+            <app-button title="Search" (click)="filterRecipes(recipeName.value)"></app-button>
+        </div>
+    </div>
     <h1 class="text-3xl">Our <span class="text-orange-400">Recipes</span></h1>
     <div class="flex flex-wrap justify-center items-center text-center px-14 py-4">
         <ng-container *ngIf="isDataLoading">

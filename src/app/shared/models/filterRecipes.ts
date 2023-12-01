@@ -1,3 +1,3 @@
-export interface FilterRecipes {
+export interface FilterRecipe {
     recipeName: string;
 }

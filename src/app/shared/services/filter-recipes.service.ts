@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilterRecipes } from '../models/filterRecipes';
+import { FilterRecipe } from '../models/filterRecipes';
 
 import { RecipeService } from './recipe.service';
 import { Recipe } from '../models/result';
@@ -9,10 +9,17 @@ import { Recipe } from '../models/result';
 })
 export class FilterRecipesService {
 
-  filterRecipes(filter: FilterRecipes): Recipe[] {
-    let recipes: Recipe[] = [];
-    this.recipeService.getRecipes().subscribe(data => {
-        recipes = data.results;
+  recipes: Recipe[] = [];
+
+  filterRecipes(filter: FilterRecipe): Recipe[] {
+    this.recipeService.getRecipes().subscribe((data) => {
+      this.recipes = data.results;
+    })
+
+    return this.recipes.filter(recipe => {
+      if (filter.recipeName && !filter.recipeName.includes(recipe.name)) {
+        return false;
+      }
     })
   }
 
